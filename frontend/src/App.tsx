@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <div className={cn("min-h-screen bg-background font-sans antialiased")}>
+      <div className={cn("main min-h-screen bg-background font-sans antialiased")}>
         <Routes>
           <Route
             path="/"

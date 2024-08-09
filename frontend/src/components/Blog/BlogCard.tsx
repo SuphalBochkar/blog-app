@@ -1,5 +1,6 @@
+import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
-
+import { GoDotFill } from "react-icons/go";
 interface BlogCardProps {
   id: string;
   authorName: string;
@@ -25,20 +26,41 @@ const BlogCard = ({
 
   return (
     <Link to={`/blog/${id}`}>
-      <div className="border-b border-slate-500 p-3 pb-2 cursor-pointer">
-        <div className="flex items-center mb-2">
-          <Avatar size="small" name={authorName} />
-          <div className="font-extralight pl-2">{authorName}</div>
-          <div className="text-[7px] pl-2">&#9679;</div>
-          <div className="font-thin text-slate-500 pl-2">
-            {dateFormatter(publishedDate)}
+      <div className="w-full h-full mb-6">
+        <div className="w-full h-[50vmin] md:h-[35vmin]">
+          <img
+            className="w-full h-full object-cover rounded-3xl object-center"
+            src="https://i.pinimg.com/564x/fc/fe/65/fcfe65272f02ca4ee988a7ed0e79c2d1.jpg"
+          />
+        </div>
+
+        <div className="flex flex-col my-3 gap-3 px-3">
+          <div className="flex justify-between w-full h-[8vmin]">
+            <div className=" text-xl md:text-2xl lg:text-[3.5vmin] overflow-y-hidden ">
+              {title.slice(0, 50)}
+            </div>
+            <MdArrowOutward className="text-3xl block mt-1 w-[4vmin]" />
+          </div>
+
+          <div className="text-xl text-gray-500">
+            <p>{content.slice(0, 150)}...</p>
+          </div>
+
+          <div className="flex items-center mt-3 justify-between">
+            <div className="flex items-center gap-2">
+              <Avatar size="small" name={authorName} />
+              <div className="text-[#242323] text-base">
+                {authorName.charAt(0).toUpperCase() +
+                  authorName.slice(1).toLowerCase()}
+                &nbsp;
+                {dateFormatter(publishedDate)}
+              </div>
+            </div>
+            <div className="">{`${Math.ceil(
+              content.length / 50
+            )} min(s) read`}</div>
           </div>
         </div>
-        <div className="text-2xl font-bold">{title}</div>
-        <div className="font-normal">{content.slice(0, 150)}...</div>
-        <div className="w-full text-slate-500 font-thin pt-3">{`${Math.ceil(
-          content.length / 50
-        )} minute(s) read`}</div>
       </div>
     </Link>
   );
@@ -61,14 +83,14 @@ export function Avatar({
 }) {
   return (
     <div
-      className={`inline-flex items-center justify-center overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 ${
-        size === "small" ? "w-6 h-6" : "w-10 h-10"
+      className={`inline-flex items-center justify-center overflow-hidden bg-black rounded-full dark:bg-gray-600 ${
+        size === "small" ? "w-8 h-8" : "w-11 h-11"
       }`}
     >
       <span
         className={`${
           size === "small" ? "text-xs" : "text-md"
-        } font-extralight text-gray-600 dark:text-gray-300`}
+        } font-extralight text-white dark:text-white`}
       >
         {name ? name[0].toUpperCase() : ""}
       </span>
