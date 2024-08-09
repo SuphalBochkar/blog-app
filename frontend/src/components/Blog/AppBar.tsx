@@ -5,7 +5,7 @@ const AppBar = () => {
   return (
     <div className="w-full h-full flex p-7 justify-between items-center ">
       <div className="flex items-center space-x-6 ml-4">
-        <Link to={"/blogs"} className="text-3xl font-bold  transition-colors">
+        <Link to={"/blogs"} className="text-[3vw] font-bold  transition-colors">
           <div className="italic tracking-normal space-x-2 text-[2vw] font-bold p-2 bg-white">
             Blog Spot.
           </div>

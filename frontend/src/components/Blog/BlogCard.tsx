@@ -27,32 +27,39 @@ const BlogCard = ({
   return (
     <Link to={`/blog/${id}`}>
       <div className="w-full h-full mb-6">
-        <div className="w-full h-full">
+        <div className="w-full h-[50vmin] md:h-[35vmin]">
           <img
             className="w-full h-full object-cover rounded-3xl object-center"
             src="https://i.pinimg.com/564x/fc/fe/65/fcfe65272f02ca4ee988a7ed0e79c2d1.jpg"
           />
         </div>
-        <div className="flex justify-between my-3 w-full h-[25%] ">
-          <h1 className="text-4xl h-[20%]">{title.slice(0, 50)}</h1>
-          <MdArrowOutward className="text-3xl block mt-2 w-12" />
-        </div>
-        <div className="text-xl text-gray-500">
-          <p>{content.slice(0, 150)}...</p>
-        </div>
-        <div className="flex items-center mt-3 justify-between">
-          <div className="flex items-center gap-2">
-            <Avatar size="small" name={authorName} />
-            <div className="text-[#242323] text-base">
-              {authorName.charAt(0).toUpperCase() +
-                authorName.slice(1).toLowerCase()}
-              <GoDotFill className="inline" />
-              {dateFormatter(publishedDate)}
+
+        <div className="flex flex-col my-3 gap-3 px-3">
+          <div className="flex justify-between w-full h-[8vmin]">
+            <div className=" text-xl md:text-2xl lg:text-[3.5vmin] overflow-y-hidden ">
+              {title.slice(0, 50)}
             </div>
+            <MdArrowOutward className="text-3xl block mt-1 w-[4vmin]" />
           </div>
-          <div className="">{`${Math.ceil(
-            content.length / 50
-          )} min(s) read`}</div>
+
+          <div className="text-xl text-gray-500">
+            <p>{content.slice(0, 150)}...</p>
+          </div>
+
+          <div className="flex items-center mt-3 justify-between">
+            <div className="flex items-center gap-2">
+              <Avatar size="small" name={authorName} />
+              <div className="text-[#242323] text-base">
+                {authorName.charAt(0).toUpperCase() +
+                  authorName.slice(1).toLowerCase()}
+                &nbsp;
+                {dateFormatter(publishedDate)}
+              </div>
+            </div>
+            <div className="">{`${Math.ceil(
+              content.length / 50
+            )} min(s) read`}</div>
+          </div>
         </div>
       </div>
     </Link>
