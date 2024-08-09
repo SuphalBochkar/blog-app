@@ -6,7 +6,7 @@ export const prismaConnectionMiddleware = createMiddleware(async (c, next) => {
   // console.log("Prisma Connection Middleware");
   const dbUrl = c.env.DATABASE_URL;
   if (!dbUrl) {
-    console.log("Configuration Error: ");
+    console.log("Configuration Error in DB: ");
     return c.json(
       { success: false, error: "Configuration error" },
       HttpStatus.INTERNAL_SERVER_ERROR
