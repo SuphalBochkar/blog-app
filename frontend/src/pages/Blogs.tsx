@@ -13,7 +13,7 @@ const Blogs = () => {
         <AppBar />
       </div>
 
-      <div className="blogs-center relative h-[100vmin] w-full p-[0.5vw] px-[0.5vw] ">
+      <div className="blogs-center relative h-[70vmin] md:h-[90vmin] lg:h-[100vmin]  w-full p-[0.5vw] px-[0.5vw] ">
         <img
           className="w-full h-full rounded-[15px] object-cover object-center"
           src="https://img.freepik.com/free-vector/realistic-grainy-texture_23-2149244608.jpg?t=st=1723207532~exp=1723211132~hmac=cc451b8b6066e47455c554bd3e18266675c149b950dcc1c92db3e56b46310925&w=1380"
@@ -35,11 +35,11 @@ const Blogs = () => {
         </div>
       </div>
 
-      <div id="blogs" className=" flex justify-center pt-16">
-        <div className=" grid grid-cols-1 w-[90%] md:grid-cols-2 lg:grid-cols-3 gap-10 p-6  my-5">
-          {true ? (
+      <div id="blogs" className=" flex justify-center pt-16 mb-12">
+        <div className=" grid grid-cols-1 w-[90%] md:grid-cols-2 lg:grid-cols-3 gap-16 p-6">
+          {loading ? (
             <>
-              {[...Array(10)].map((_, index) => (
+              {[...Array(3)].map((_, index) => (
                 <BlogCardSkeleton key={index} />
               ))}
             </>
@@ -57,7 +57,7 @@ const Blogs = () => {
                 blogContent = blog.content;
               }
               return (
-                <div key={blog.id} className="h-[300px] flex items-stretch">
+                <div key={blog.id} className=" flex items-stretch">
                   <BlogCard
                     key={blog.id}
                     id={blog.id}
