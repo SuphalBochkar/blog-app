@@ -1,27 +1,41 @@
 import { Link } from "react-router-dom";
 import { Avatar } from "./BlogCard";
-
+import { RiSearch2Line } from "react-icons/ri";
 const AppBar = () => {
   return (
-    <div className="bg-gray-800 text-white border-b-2 border-gray-600 flex justify-between items-center px-8 py-4 shadow-md w-full">
-      <div className="flex items-center space-x-6">
-        <Link
-          to={"/blogs"}
-          className="text-2xl font-bold hover:text-gray-300 transition-colors"
-        >
-          SAi Blogs
+    <div className="w-full h-full flex p-7 justify-between items-center ">
+      <div className="flex items-center space-x-6 ml-4">
+        <Link to={"/blogs"} className="text-3xl font-bold  transition-colors">
+          <div className="italic tracking-normal space-x-2 text-[2vw] font-bold p-2 bg-white">
+            Blog Spot.
+          </div>
         </Link>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-4 font-medium text-[1vw]">
+        <div className="text-xl cursor-pointer text-white bg-black p-3 rounded-[50%] hover:scale-110">
+          <RiSearch2Line />
+        </div>
         <Link to={"/publish"}>
           <button
             type="button"
-            className="bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-colors"
+            className="rounded-3xl border-2 border-black bg-white px-4 py-2  hover:bg-black hover:text-white "
           >
             Add Post
           </button>
         </Link>
-        <Avatar size="big" name="Sai" />
+
+        <a href={"#home"}>
+          <div className="">Home</div>
+        </a>
+        <a href="#blogs">
+          <div>Blogs</div>
+        </a>
+        <a href="#contact">
+          <div>Contact</div>
+        </a>
+        <Link to={"/profile"}>
+          <Avatar size="big" name="Sai" />
+        </Link>
       </div>
     </div>
   );

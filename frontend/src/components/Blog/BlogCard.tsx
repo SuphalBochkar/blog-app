@@ -61,14 +61,14 @@ export function Avatar({
 }) {
   return (
     <div
-      className={`inline-flex items-center justify-center overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 ${
-        size === "small" ? "w-6 h-6" : "w-10 h-10"
+      className={`inline-flex items-center justify-center overflow-hidden bg-black rounded-full dark:bg-gray-600 ${
+        size === "small" ? "w-7 h-7" : "w-11 h-11"
       }`}
     >
       <span
         className={`${
           size === "small" ? "text-xs" : "text-md"
-        } font-extralight text-gray-600 dark:text-gray-300`}
+        } font-extralight text-white dark:text-white`}
       >
         {name ? name[0].toUpperCase() : ""}
       </span>
