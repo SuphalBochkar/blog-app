@@ -11,7 +11,7 @@ else
 
   if git log -1 --pretty=oneline --abbrev-commit | grep -w "build"; then
     echo "✅ - 'Build' found in the commit message. Proceeding with the build."
-    exit 0
+    exit 1
   else
     echo "🛑 - 'Build' not found in the commit message. Build cancelled."
     exit 1
