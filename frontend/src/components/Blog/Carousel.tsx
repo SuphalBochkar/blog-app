@@ -71,7 +71,7 @@ const Carousel = () => {
       setCurrentIndex((prevIndex) =>
         prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
       );
-    }, 10000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -93,32 +93,41 @@ const Carousel = () => {
   const { image, title, description } = carouselItems[currentIndex];
 
   return (
-    <div id="controls-carousel" className="relative w-full">
-      {/* Carousel Content */}
-      <div className="blogs-center relative lg:h-[100vmin] w-full p-[0.5vw] px-[0.5vw] md:leading-tight ">
-        <img
-          className="w-full h-full rounded-[15px] object-cover object-center"
-          src={image}
-          alt={title}
-        />
-        <div className="absolute left-14 text-white bottom-[6%]">
-          <div className="text-[4vw] sm:text-[5vw] md:text-[6vw] w-[70%] sm:w-[90%] mix-blend-exclusion">
-            {title}
-          </div>
-          <p className="text-[1.8vw] bg-white p-2 w-[70%] my-[1vw] text-black">
-            {description}
-          </p>
-          <div className="border lg:border-2 border-white px-1 py-1 rounded-md lg:rounded-xl text-white max-w-fit">
-            <div className="flex justify-center items-center h-full">
-              <a
-                href="#blogs"
-                className="text-[1.8vw] lg:text-2xl md:px-2 md:py-1 font-medium transition-colors duration-300 ease-in-out hover:text-gray-300"
-              >
-                Browse Blogs
-              </a>
+    <div id="controls-carousel" className="relative w-full overflow-hidden">
+      <div
+        className="flex transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {carouselItems.map((_, index) => (
+          <div
+            className="blogs-center relative lg:h-[100vmin] w-full p-[0.5vw] px-[0.5vw] md:leading-tight flex-shrink-0"
+            key={index}
+          >
+            <img
+              className="w-full h-full rounded-[15px] object-cover object-center"
+              src={image}
+              alt={title}
+            />
+            <div className="absolute left-14 text-white bottom-[6%]">
+              <div className="text-[4vw] sm:text-[5vw] md:text-[6vw] w-[70%] sm:w-[90%] mix-blend-exclusion">
+                {title}
+              </div>
+              <p className="text-[1.8vw] bg-white p-2 w-[70%] my-[1vw] text-black">
+                {description}
+              </p>
+              <div className="border lg:border-2 border-white px-1 py-1 rounded-md lg:rounded-xl text-white max-w-fit">
+                <div className="flex justify-center items-center h-full">
+                  <a
+                    href="#blogs"
+                    className="text-[1.8vw] lg:text-2xl md:px-2 md:py-1 font-medium transition-colors duration-300 ease-in-out hover:text-gray-300"
+                  >
+                    Browse Blogs
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
 
       {/* Slider indicators */}
@@ -126,7 +135,7 @@ const Carousel = () => {
         {carouselItems.map((_, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-1 h-1 lg:w-3 lg:h-3 rounded-full ${
               index === currentIndex ? "bg-white" : "bg-gray-500"
             }`}
             aria-current={index === currentIndex ? "true" : "false"}
@@ -142,9 +151,9 @@ const Carousel = () => {
         className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group"
         onClick={handlePrev}
       >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
+        <span className="inline-flex items-center justify-center w-5 h-5 lg:w-10 lg:h-10  rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
           <svg
-            className="w-4 h-4 text-white"
+            className="w-2 h-2 lg:w-4 lg:h-4 text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -166,9 +175,9 @@ const Carousel = () => {
         className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group"
         onClick={handleNext}
       >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
+        <span className="inline-flex items-center justify-center w-5 h-5 lg:w-10 lg:h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
           <svg
-            className="w-4 h-4 text-white"
+            className="w-2 h-2 lg:w-4 lg:h-4 text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
