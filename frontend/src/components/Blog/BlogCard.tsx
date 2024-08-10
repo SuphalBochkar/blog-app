@@ -1,6 +1,5 @@
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { GoDotFill } from "react-icons/go";
 interface BlogCardProps {
   id: string;
   authorName: string;
