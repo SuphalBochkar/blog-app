@@ -20,16 +20,20 @@ const usePostBlog = () => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      console.log("response", response);
-
       if (response.data.success) {
-        return response.data.data;
+        return { success: true, data: response.data.data };
       } else {
-        throw new Error(response.data.error || "Failed to post blog");
+        setError(response.data.error || "Failed to post blog");
+        return {
+          success: false,
+          error: response.data.error || "Failed to post blog",
+        };
       }
-    } catch (error: any) {
-      setError(error.response.data.error || "An unknown error occurred");
-      return null;
+    } catch (e: any) {
+      const errorMessage =
+        e.response?.data?.error || "An unknown error occurred";
+      setError(errorMessage);
+      return { success: false, error: errorMessage };
     } finally {
       setLoading(false);
     }

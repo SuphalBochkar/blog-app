@@ -25,7 +25,7 @@ body {
   height: 100%;
   width: 100%;
 }
-/* 
+/*
 .main{
   padding-top: 10vh;
 } */
@@ -103,4 +103,23 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #f9fafb;
 }
