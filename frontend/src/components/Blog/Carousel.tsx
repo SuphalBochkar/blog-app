@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import CarouselImage1 from "/carousel1.png";
+import CarouselImage2 from "/carousel2.png";
+import CarouselImage3 from "/carousel3.png";
 
 // const Carousel = () => {
 //   return (
@@ -37,23 +40,26 @@ import { useState, useEffect } from "react";
 
 const carouselItems = [
   {
-    image: "/carousel1.png",
+    image: CarouselImage1,
     title:
       'How to improve your UI design skills: Quickly develop an "eye" for great design',
     description:
       "The design industry is constantly evolving, but good design is timeless. Learn how to quickly develop an eye for IJI design and improve your design skills in 2023.",
+    link: "#blogs",
   },
   {
-    image: "/carousel2.png",
+    image: CarouselImage2,
     title: "Design Tips for Beginners",
     description:
       "Get started with design basics and learn key principles that will enhance your skills.",
+    link: "#design-tips",
   },
   {
-    image: "/carousel3.png",
+    image: CarouselImage3,
     title: "Exploring Color Theory",
     description:
       "Dive into the world of color theory and understand how to use colors effectively in your designs.",
+    link: "#color-theory",
   },
 ];
 
@@ -96,7 +102,7 @@ const Carousel = () => {
           alt={title}
         />
         <div className="absolute left-14 text-white bottom-[6%]">
-          <div className="text-[4vw] sm:text-[5vw] md:text-[6vw] w-[70%] sm:w-[90%] mix-blend-exclusion ">
+          <div className="text-[4vw] sm:text-[5vw] md:text-[6vw] w-[70%] sm:w-[90%] mix-blend-exclusion">
             {title}
           </div>
           <p className="text-[1.8vw] bg-white p-2 w-[70%] my-[1vw] text-black">

@@ -16,13 +16,13 @@ const BlogCard = ({
   content,
   publishedDate,
 }: BlogCardProps) => {
-  console.log("BlogCardProps", {
-    id,
-    authorName,
-    title,
-    content,
-    publishedDate,
-  });
+  //   console.log("BlogCardProps", {
+  //     id,
+  //     authorName,
+  //     title,
+  //     content,
+  //     publishedDate,
+  //   });
 
   return (
     <Link to={`/blog/${id}`}>
