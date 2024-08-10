@@ -37,20 +37,20 @@ import { useState, useEffect } from "react";
 
 const carouselItems = [
   {
-    image: "../carousel1.avif",
+    image: "../carousel1.png",
     title:
       'How to improve your UI design skills: Quickly develop an "eye" for great design',
     description:
       "The design industry is constantly evolving, but good design is timeless. Learn how to quickly develop an eye for IJI design and improve your design skills in 2023.",
   },
   {
-    image: "../carousel2.avif",
+    image: "../carousel2.png",
     title: "Design Tips for Beginners",
     description:
       "Get started with design basics and learn key principles that will enhance your skills.",
   },
   {
-    image: "../carousel3.avif",
+    image: "../carousel3.png",
     title: "Exploring Color Theory",
     description:
       "Dive into the world of color theory and understand how to use colors effectively in your designs.",
