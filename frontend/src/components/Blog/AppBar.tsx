@@ -27,6 +27,7 @@ const NavItem = ({ path, hash, label }: NavItemProps) => {
       {label}
     </div>
   );
+
 };
 
 const AppBar = () => {
