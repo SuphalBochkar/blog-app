@@ -1,6 +1,6 @@
 import AppBar from "../components/Blog/AppBar";
 import MainEditor from "../components/Novel-Tailwind/MainEditor";
-import plusCircle from "../assets/plus-circle.png";
+import plusCircle from "../assets/images/plus-circle.png";
 import { JSONContent } from "novel";
 import { useState, useEffect } from "react";
 import { defaultValue } from "../lib/default-value";

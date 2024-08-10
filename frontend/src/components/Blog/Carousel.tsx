@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import CarouselImage1 from "/carousel1.png";
-import CarouselImage2 from "/carousel2.png";
-import CarouselImage3 from "/carousel3.png";
+import CarouselImage1 from "../../assets/images/carousel1.png";
+import CarouselImage2 from "../../assets/images/carousel2.png";
+import CarouselImage3 from "../../assets/images/carousel3.png";
 
 // const Carousel = () => {
 //   return (
