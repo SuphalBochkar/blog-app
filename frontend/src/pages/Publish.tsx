@@ -29,13 +29,13 @@ const Publish = () => {
     return defaultValue;
   });
 
-  const { postBlog, loading, error } = usePostBlog();
-  const navigate = useNavigate();
-
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY_TITLE, title);
     localStorage.setItem(LOCAL_STORAGE_KEY_CONTENT, JSON.stringify(content));
   }, [title, content]);
+
+  const { postBlog, loading } = usePostBlog();
+  const navigate = useNavigate();
 
   const handleSave = async () => {
     const blogData = {
@@ -46,13 +46,13 @@ const Publish = () => {
 
     try {
       const result = await postBlog(blogData);
-      if (result) {
+      if (result.success) {
         toast.success("Saved successfully");
         localStorage.removeItem(LOCAL_STORAGE_KEY_TITLE);
         localStorage.removeItem(LOCAL_STORAGE_KEY_CONTENT);
         navigate("/blogs");
       } else {
-        toast.error(error || "Failed to save");
+        toast.error(result.error || "Failed to save");
       }
     } catch (error: any) {
       toast.error(error.message || "An unexpected error occurred");
@@ -61,7 +61,7 @@ const Publish = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <div>
+      <div className="bg-transparent w-full h-[12vh] z-50">
         <AppBar />
       </div>
       <div className="container mx-auto px-4 py-8">

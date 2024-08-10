@@ -1,5 +1,6 @@
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
+
 interface BlogCardProps {
   id: string;
   authorName: string;
