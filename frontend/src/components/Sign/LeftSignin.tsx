@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { userZodSigninT } from "@finish66/medium-common";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useAuthContext } from "../../context/AuthContext";
 
 interface LabeledProps {
   label: string;
@@ -26,14 +27,17 @@ export default function LeftSignin() {
     formState: { errors, isSubmitting },
   } = useForm<userZodSigninT>();
   const navigate = useNavigate();
+  const { setAuthUser } = useAuthContext();
 
   const onSubmit: SubmitHandler<userZodSigninT> = async (data) => {
     const url = import.meta.env.VITE_BACKEND_URL;
     try {
       const response = await axios.post(`${url}/user/signin`, data);
       if (response.data.success) {
-        localStorage.setItem("token", response.data.data.token);
+        const token = response.data.data.token;
+        localStorage.setItem("token", token);
         toast.success(response.data.message);
+        setAuthUser(token);
         navigate("/blogs");
       } else {
         toast.error("An error occurred");
