@@ -5,7 +5,7 @@ echo "VERCEL_GIT_COMMIT_REF: $VERCEL_GIT_COMMIT_REF"
 
 if [[ "$VERCEL_ENV" == "production" ]]; then
   echo "✅ - Production environment detected. Proceeding with the build."
-  exit 0
+  exit 1
 else
   echo "🔍 - Non-production environment detected. Checking for 'build' in the latest commit message..."
 
@@ -14,6 +14,6 @@ else
     exit 1
   else
     echo "🛑 - 'Build' not found in the commit message. Build cancelled."
-    exit 1
+    exit 0
   fi
 fi
