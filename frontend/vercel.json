@@ -11,8 +11,9 @@
   ],
   "routes": [
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
     {
-      "src": "/(.*)",
+      "src": "/youtube",
       "dest": "https://www.youtube.com",
       "status": 302
     }
