@@ -9,6 +9,7 @@ import Publish from "./pages/Publish";
 import Test from "./components/Test/Test";
 import { cn } from "./lib/utils.ts";
 import { useAuthContext } from "./context/AuthContext.tsx";
+import Profile from "./pages/Profile.tsx";
 
 function App() {
   const { authUser } = useAuthContext();
@@ -44,6 +45,10 @@ function App() {
           <Route
             path="/publish"
             element={authUser ? <Publish /> : <Navigate to="/signin" />}
+          />
+          <Route
+            path="/profile"
+            element={authUser ? <Profile /> : <Navigate to="/signin" />}
           />
           <Route path="/test" element={<Test />} />
           <Route
