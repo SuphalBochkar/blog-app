@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 const usePostBlog = () => {
   const [loading, setLoading] = useState(false);
@@ -29,9 +29,10 @@ const usePostBlog = () => {
           error: response.data.error || "Failed to post blog",
         };
       }
-    } catch (e: any) {
+    } catch (e) {
       const errorMessage =
-        e.response?.data?.error || "An unknown error occurred";
+        (e as AxiosError<{ error: string }>).response?.data?.error ||
+        "An unknown error occurred";
       setError(errorMessage);
       return { success: false, error: errorMessage };
     } finally {

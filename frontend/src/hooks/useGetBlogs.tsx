@@ -20,7 +20,7 @@ const useGetBlogs = () => {
       setLoading(false);
     };
     fetchBlogs();
-  }, []);
+  }, [url]);
 
   return { loading, blogs };
 };

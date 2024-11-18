@@ -15,7 +15,9 @@ function App() {
 
   return (
     <>
-      <div className={cn("main min-h-screen bg-background font-sans antialiased")}>
+      <div
+        className={cn("main min-h-screen bg-background font-sans antialiased")}
+      >
         <Routes>
           <Route
             path="/"
@@ -57,3 +59,20 @@ function App() {
   );
 }
 export default App;
+
+// export const a = {
+//   type: "doc",
+//   content: [
+//     { type: "paragraph" },
+//     {
+//       type: "image",
+//       attrs: {
+//         src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/icon-removebg-preview-xfd9qXabiwxNxaDPEh8gMuHxqFsBfz.png",
+//         alt: null,
+//         title: null,
+//         width: 438,
+//         height: 274.567,
+//       },
+//     },
+//   ],
+// };

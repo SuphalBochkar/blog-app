@@ -8,6 +8,14 @@
   font-family: vsans-sbold;
   src: url(./assets/WFVisualSans-SemiBold-aa0e55353b6a1b897f76a0fcbf5561fa243ce1b8b9f6aebcb5a186f0536713b1.woff2);
 }
+@font-face {
+  font-family: Jetbrains-regular;
+  src: url(./assets/JetBrainsSans-Regular.woff2);
+}
+@font-face {
+  font-family: Jetbrains-semibold;
+  src: url(./assets/JetBrainsSans-SemiBold.woff2);
+}
 
 @tailwind base;
 @tailwind components;

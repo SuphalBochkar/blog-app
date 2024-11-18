@@ -74,6 +74,15 @@ export function dateFormatter(date: string) {
   });
 }
 
+export function timeFormatter(dateTime: string) {
+  return new Date(dateTime).toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: true,
+  });
+}
+
 export function Avatar({
   name,
   size = "small",
